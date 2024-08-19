@@ -1,0 +1,299 @@
+.footer{
+    margin-top: 200px;
+    background: #111b2a;
+    color: #ffffff99;
+    @include mobile{
+        // padding-bottom: 60px;
+    }
+    .group-footer{
+        max-width:1516px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 97px 0 80px;
+        @include tablet{
+            flex-direction:column;
+            align-items: center;
+            gap: 40px;
+            padding: 45px 0 40px;
+        }
+        @include mobile{
+            padding: 52px 0 35px;
+            gap: 0;
+        }
+    }
+    .sns-area{
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        width: 30%;
+
+        @include desktop{
+            gap: 8px;
+        }
+        @include tablet{
+            width: initial;
+        }
+        @include mobile{
+            order:2;
+            padding: 70px 0 45px;
+            gap:9px;
+        }
+        .link-sns{
+            opacity:0.3;
+            width: 69px;
+            height: 69px;
+            border:1px solid rgb(247, 247, 247);
+            border-radius:18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition:opacity 300ms, background 300ms, border 300ms;
+            @include desktop{
+                border-radius:18px;
+                width: 62px;
+                height: 62px;
+            }
+            @include mobile{
+                width: 51px;
+                height: 51px;
+                border-radius: 9px;
+            }
+        }
+        .link-sns:hover{
+            border:0;
+            opacity:1;
+            background:#326aff;
+        }
+    }
+    .legal-area{
+        display: none;
+
+        @include mobile{
+            display: flex;
+            gap: 12px;
+            order:3;
+            font-size: 12px;
+            color: #fff;
+            opacity: 0.3;
+        }
+    }
+    .adress-area{
+
+        width: 40%;
+
+        @include tablet{
+            width: 100%;
+        }
+        @include mobile{
+            order:1;
+        }
+        .footer-logo{
+            display: block;
+            margin-bottom: 39px;
+
+            @include mobile{
+                margin-bottom: 45px;
+            }
+        }
+        .footer-logo img{
+            display: block;
+            margin: 0 auto;
+
+            @include mobile{
+                width: 189px;
+            }
+        }
+        adress{
+            text-align: center;
+            display: block;
+            font-size: 15px;
+            line-height: 1.6;
+            font-weight: 500;
+
+            @include mobile{
+                display: none;
+            }
+            &.mobile-adress{
+                display: none;
+
+                @include mobile{
+                    display: block;
+                    color: #fff;
+                    font-size: 14px;
+                    opacity: 0.4;
+                }
+            }
+
+        }
+    }
+
+    .family-area{
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 30%;
+
+        @include tablet{
+            width: initial;
+        }
+        @include mobile{
+            order:4;
+            padding-top: 20px;
+        }
+        .family-box{
+            position: relative;
+            width: 228px;
+
+            @include mobile{
+                width: 327px;
+            }
+            @include mobile-mini{
+                width: 260px;
+            }
+            
+
+        }
+        button{
+            font-family: 'Exo 2', 'Noto Sans KR', sans-serif;
+            padding: 0 26px;
+            border-radius:18px;
+            font-size: 16px;
+            width: 100%;
+            background: transparent;
+            border:1px solid rgba(255,255,255,0.3);
+            outline:none;
+            text-align: left;
+            height: 69px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include desktop{
+                height: 60px;
+            }
+            @include mobile{
+                height: 52px;
+                padding: 0 20px;
+                border-radius: 9px;
+                border:none;
+                background-color: rgb(8, 17, 31);
+                font-size: 14px;
+            }
+            &::after{
+                background: url('../images/tri-ico-w.png') center/cover no-repeat;
+                content:'';
+                width: 11px;
+                height: 8px;
+                display: block;
+                transform:rotate(180deg);
+            }
+            &.delay{
+                transition:border-radius 1500ms 600ms;
+            }
+        }
+        .family-list{
+            overflow: hidden;
+            transition:max-height 600ms, padding 600ms, clip-path 600ms;
+            max-height:0;
+            width: inherit;
+            background: rgba(255, 255, 255, 1);
+            color: rgba(17, 27, 42, 0.4);
+            font-size: 16px;
+            padding: 0;
+            border-radius:0 0 18px 18px;
+
+
+            position: absolute;
+            top: 69px;
+            left: 0;
+
+            @include desktop{
+                top: 60px;
+            }
+            @include mobile{
+                top: -95px;
+                max-height:10vh;
+                padding: 15px 0 20px;
+                border-radius: 9px 9px 0 0;
+                clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            }
+        }
+        .family-item{
+            padding: 0 26px;
+            height: 35px;
+            line-height: 35px;
+        }
+        &.on{
+            button{
+                border-radius:18px 18px 0 0;
+                background: #fff;
+                color: #222;
+                border-bottom:1px solid rgba(0,0,0,0.1);
+                @include mobile{
+                    border-radius:0 0 9px 9px;
+                    border-top:1px solid rgba(0,0,0,0.1);
+                    border-bottom:initial;
+                }
+                &::after{
+                    background: url('../images/tri-ico-b.png') center/cover no-repeat;
+                    transform:rotate(0deg);
+                }
+            }
+            .family-list{
+                max-height:10vh;
+                padding: 15px 0 20px;
+
+                @include mobile{
+                    clip-path: polygon(0 100%, 101% 100%, 100% 0, 0 0);
+                }
+            }
+            .family-item{
+                padding: 0 26px;
+                height: 35px;
+                line-height: 35px;
+            }
+            
+        }
+    }
+
+    .group-legal{
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top:1px solid rgba(121, 121, 121, 0.3);
+        gap: 36px;
+        @include mobile{
+            display: none;
+        }
+        .link-legal{
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            @include mobile{
+                font-size: 12px;
+            }
+        }
+    }
+
+
+    .group-copyright{
+        font-size: 14px;
+        background: #08111f;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.2);
+        height: 39px;
+        line-height: 39px;
+
+        @include mobile-mini{
+            font-size: 12px;
+        }
+        p{
+            height: 100%;
+        }
+    }
+}

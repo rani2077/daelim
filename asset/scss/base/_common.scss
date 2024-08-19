@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+
+body{
+
+    &.no-scroll{
+        overflow-y:hidden;
+
+    }
+}
+
+.blind{
+    margin: 1px;
+    clip:rect(0,0,0,0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 1920px;
+    width: 100%;
+    margin: 97px auto 0;
+    // overflow: hidden;
+    @include mobile{
+        margin:61px auto 0;
+
+    }
+}
+
+
+.group-title{
+    text-align: center;
+
+    .main-title{
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(65,65,65,0.3);
+        @include mobile{
+            font-size: 12px;
+        }
+        .line{
+            display: inline-block;
+            width: 128px;
+            height: 1px;
+            background: #252525;
+            opacity:0.1;
+            margin: 0 20px 0 18px;
+            vertical-align: middle;
+        }
+    }
+
+    .sub-title{
+        font-size: 58px;
+        font-weight: 300;
+        margin: 47px 0 20px;
+        display: block;
+
+        @include desktop{
+            font-size: 48px;
+            margin: 30px 0 10px;
+        }
+        @include tablet-large{
+            font-size: 40px;
+            margin: 18px 0 13px;
+        }
+        @include mobile{
+            font-size: 33px;
+        }
+    }
+    .desc{
+        font-size: 18px;
+        color: #7d7d7d;
+        letter-spacing:-0.54px;
+        @include desktop{
+            font-size: 15px;
+        }
+    }
+    
+
+}
+
+
+
+.container{
+    .inner{
+        max-width:1516px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+.footer{
+    .inner{
+        max-width:1516px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
